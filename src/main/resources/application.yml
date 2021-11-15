@@ -1,0 +1,34 @@
+spring:
+  profiles:
+    active: local
+  thymeleaf:
+    mode: HTML
+    encoding: UTF-8
+    check-template-location: true
+    prefix: classpath:/templates/
+    suffix: .html
+    cache: false
+  application:
+    name: demo
+  security:
+    oauth2:
+      client:
+        registration:
+          registration:
+            kakao:
+              authorization-grant-type: authorization_code
+              client-id: 444444444444444479e933556a21e8
+              client-secret: QQQQQQQQQQQQQQQQuOfOLzjZMc5q1U
+              redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
+              scope:
+                - profile
+                - account_email
+              client-authentication-method: POST
+              client-name: Kakao
+
+
+jwt:
+  secret: c3ByaW5nLWJvb3Qtc2VjdXJpdHktand0LXR1dG9yaWFsLWppd29vbi1zcHJpbmctYm9vdC1zZWN1cml0eS1qd3QtdHV0b3JpYWwK
+
+server:
+  port: 2000
